@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { CodeBlock, atomOneDark } from 'react-code-blocks'
+import { Code, atomOneDark } from 'react-code-blocks'
 import {
 	FaBars,
 	FaBriefcase,
@@ -327,11 +327,16 @@ function App() {
 						<h1 className="hero-title fancy-font">Stefan Jakovljević</h1>
 						<p className="hero-kicker code-font">CS @ UMich</p>
 						<div className="hero-code code-font">
-							<CodeBlock
+							<Code
 								text={aboutCode}
 								language="python"
+								preTag="pre"
 								showLineNumbers={true}
 								theme={atomOneDark}
+								{...{
+									tabIndex: 0,
+									'aria-label': 'Python profile code sample',
+								}}
 							/>
 						</div>
 						<div className="hero-socials" aria-label="Social links">
